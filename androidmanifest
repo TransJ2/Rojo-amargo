@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="29" android:compileSdkVersionCodename="10" android:versionCode="10034" android:versionName="1.9" package="com.pixelcurves.terlauncher" platformBuildVersionCode="29" platformBuildVersionName="10">
+	<uses-sdk android:minSdkVersion="19" android:targetSdkVersion="29" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="com.android.vending.CHECK_LICENSE" />
+	<uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+	<uses-feature android:glEsVersion="0x30000" android:required="true" />
+	<uses-feature android:name="android.hardware.gamepad" />
+	<uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+	<uses-feature android:name="android.hardware.touchscreen.multitouch" android:required="false" />
+	<uses-feature android:name="android.hardware.touchscreen.multitouch.distinct" android:required="false" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	<uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+	<application android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:icon="@mipmap/app_icon" android:isGame="true" android:keepScreenOn="true" android:label="@string/app_name" android:largeHeap="true" android:name="com.pixelcurves.terlauncher.other.App" android:supportsRtl="true" android:theme="@style/AppTheme" android:useEmbeddedDex="true">
+		<activity android:configChanges="orientation|screenSize" android:launchMode="singleTop" android:name="com.pixelcurves.terlauncher.activities.MainActivity" android:screenOrientation="portrait" android:theme="@style/TransparentUiTheme" android:windowSoftInputMode="adjustPan">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.SEND" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<data android:mimeType="*/*" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<data android:mimeType="*/*" />
+				<data android:host="*" />
+				<data android:scheme="file" />
+				<data android:scheme="content" />
+				<data android:pathPattern=".*\\.tl" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.pixelcurves.terlauncher.activities.OtherActivity" android:screenOrientation="portrait" android:theme="@style/TransparentUiTheme" android:windowSoftInputMode="adjustPan" />
+		<activity android:name="com.pixelcurves.terlauncher.activities.ImportActivity" android:screenOrientation="portrait" android:theme="@style/TransparentUiTheme" android:windowSoftInputMode="adjustPan" />
+		<activity android:name="com.pixelcurves.terlauncher.activities.ImportMapsActivity" android:screenOrientation="portrait" android:theme="@style/TransparentUiTheme" android:windowSoftInputMode="adjustPan" />
+		<activity android:name="com.pixelcurves.terlauncher.activities.ImportCharactersActivity" android:screenOrientation="portrait" android:theme="@style/TransparentUiTheme" android:windowSoftInputMode="adjustPan" />
+		<activity android:name="com.pixelcurves.terlauncher.activities.ExportActivity" android:screenOrientation="portrait" android:theme="@style/TransparentUiTheme" android:windowSoftInputMode="adjustPan" />
+		<activity android:name="com.pixelcurves.terlauncher.activities.ExportMapsActivity" android:screenOrientation="portrait" android:theme="@style/TransparentUiTheme" android:windowSoftInputMode="adjustPan" />
+		<activity android:name="com.pixelcurves.terlauncher.activities.ExportCharactersActivity" android:screenOrientation="portrait" android:theme="@style/TransparentUiTheme" android:windowSoftInputMode="adjustPan" />
+		<activity android:name="com.pixelcurves.terlauncher.activities.AboutProgramActivity" android:screenOrientation="portrait" android:theme="@style/PrimaryColorStatusTheme.NavBarScrollable" android:windowSoftInputMode="adjustPan" />
+		<activity android:name="com.pixelcurves.terlauncher.activities.MenuTexturesActivity" android:screenOrientation="portrait" android:theme="@style/TransparentUiTheme.NavBarScrollable" android:windowSoftInputMode="adjustPan" />
+		<activity android:name="com.pixelcurves.terlauncher.activities.PacksActivity" android:screenOrientation="portrait" android:theme="@style/TransparentUiTheme" android:windowSoftInputMode="adjustPan" />
+		<activity android:name="com.pixelcurves.terlauncher.activities.PackDetailsActivity" android:screenOrientation="portrait" android:theme="@style/TransparentUiTheme" android:windowSoftInputMode="adjustPan" />
+		<activity android:name="com.pixelcurves.terlauncher.activities.SettingsActivity" android:screenOrientation="portrait" android:theme="@style/SettingsTheme" android:windowSoftInputMode="adjustPan" />
+		<activity android:name="com.pixelcurves.terlauncher.activities.PackRemapperActivity" android:screenOrientation="portrait" android:theme="@style/TransparentUiTheme.NavBarScrollable" android:windowSoftInputMode="adjustPan" />
+		<activity android:name="com.pixelcurves.terlauncher.activities.ModsActivity" android:screenOrientation="portrait" android:theme="@style/TransparentUiTheme" android:windowSoftInputMode="adjustPan" />
+		<activity android:name="com.pixelcurves.terlauncher.activities.ServerPacksActivity" android:screenOrientation="portrait" android:theme="@style/TransparentUiTheme.NavBarScrollable" android:windowSoftInputMode="adjustPan" />
+		<activity android:name="com.pixelcurves.terlauncher.activities.ServerPackDetailsActivity" android:screenOrientation="portrait" android:theme="@style/TransparentUiTheme" android:windowSoftInputMode="adjustPan" />
+		<meta-data android:name="io.fabric.ApiKey" android:value="3a6c3a3f5d5b0b41cd46bb34d398991ff7e1e826" />
+		<activity android:configChanges="density|fontScale|keyboard|keyboardHidden|layoutDirection|locale|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:launchMode="singleTask" android:name="com.terraria_1_3.UnityPlayerActivity" android:resizeableActivity="false" android:screenOrientation="sensorLandscape" android:theme="@style/UnityThemeSelector">
+			<meta-data android:name="unityplayer.UnityActivity" android:value="true" />
+			<meta-data android:name="android.notch_support" android:value="true" />
+		</activity>
+		<meta-data android:name="unity.build-id" android:value="76049893-62de-4ae0-9d0f-5611c76e1f1a" />
+		<meta-data android:name="unity.splash-mode" android:value="1" />
+		<meta-data android:name="unity.splash-enable" android:value="true" />
+		<meta-data android:name="notch.config" android:value="portrait|landscape" />
+		<receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver" />
+		<receiver android:enabled="true" android:exported="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+			<intent-filter>
+				<action android:name="com.android.vending.INSTALL_REFERRER" />
+			</intent-filter>
+		</receiver>
+		<service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService" />
+		<service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE" />
+		<service android:directBootAware="true" android:exported="false" android:name="com.google.firebase.components.ComponentDiscoveryService">
+			<meta-data android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar" android:value="com.google.firebase.components.ComponentRegistrar" />
+			<meta-data android:name="com.google.firebase.components:com.google.firebase.iid.Registrar" android:value="com.google.firebase.components.ComponentRegistrar" />
+		</service>
+		<receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+			<intent-filter>
+				<action android:name="com.google.android.c2dm.intent.RECEIVE" />
+			</intent-filter>
+		</receiver>
+		<provider android:authorities="com.pixelcurves.terlauncher.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider" />
+		<activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+		<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+		<service android:directBootAware="true" android:exported="false" android:name="androidx.room.MultiInstanceInvalidationService" />
+		<provider android:authorities="com.pixelcurves.terlauncher.crashlyticsinitprovider" android:exported="false" android:initOrder="90" android:name="com.crashlytics.android.CrashlyticsInitProvider" />
+	</application>
+</manifest>
